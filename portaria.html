@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Falar com a portaria · CondoPack</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  body{font-family:Inter,Arial,sans-serif;background:#F4F7FB;color:#111827;
+       display:flex;flex-direction:column;min-height:100vh;align-items:center;justify-content:center;
+       margin:0;padding:20px;text-align:center;box-sizing:border-box}
+  main a{display:inline-block;margin-top:16px;background:#25D366;color:#fff;
+    padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:600}
+  footer{margin-top:40px;font-size:13px;color:#475569;max-width:640px}
+  footer a{color:#2563EB}
+</style>
+</head>
+<body>
+<main>
+  <div style="font-size:42px" aria-hidden="true">📦</div>
+  <h1 style="font-size:20px">Abrindo o WhatsApp da portaria…</h1>
+  <p id="msg">Se não abrir automaticamente, toque no botão abaixo.</p>
+  <a id="link" href="#">Abrir WhatsApp</a>
+</main>
+<footer>
+  <p><a href="./">CondoPack</a> · <a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a></p>
+  <p>© 2026 Brayan ramirez — CNPJ 58.945.358/0001-77 — rua sergio ache 1151 riberao preto sao paulo, CEP 14056-440</p>
+</footer>
+<script>
+(function(){
+  var n = (new URLSearchParams(location.search).get("n") || "").replace(/\D/g, "");
+  var link = document.getElementById("link");
+
+  // Só aceita número brasileiro válido e só redireciona para o WhatsApp:
+  // a página não pode ser usada para mandar alguém a outro site.
+  if (!/^55\d{10,11}$/.test(n)) {
+    document.getElementById("msg").textContent =
+      "Link inválido. Fale diretamente com a portaria do seu condomínio.";
+    link.style.display = "none";
+    return;
+  }
+
+  var url = "https://wa.me/" + n;
+  link.href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>

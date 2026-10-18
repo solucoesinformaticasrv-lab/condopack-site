@@ -13,6 +13,7 @@ O site também serve para a verificação de empresa da Meta (WhatsApp Business 
 | `index.html` | Início: apresentação, como funciona, funcionalidades, planos e contato |
 | `privacidade.html` | Política de Privacidade (LGPD) |
 | `termos.html` | Termos de Uso |
+| `portaria.html` | Redireciona o morador ao WhatsApp da portaria: `portaria.html?n=55DDDNUMERO` (só aceita número brasileiro e só abre o WhatsApp) |
 | `assets/style.css` | Estilos (cores, fonte Inter, layout responsivo) |
 | `assets/script.js` | Menu no celular |
 | `assets/favicon.svg` | Ícone do site |
@@ -25,7 +26,7 @@ HTML e CSS estáticos, sem frameworks e sem etapa de build.
 2. Para ver localmente, abra `index.html` no navegador (ou rode `python3 -m http.server` na pasta e acesse http://localhost:8000).
 3. Faça commit na branch `main`. O GitHub Pages publica sozinho em 1–2 minutos (acompanhe em **Actions**).
 
-**Importante:** o rodapé (razão social, CNPJ e endereço) e o cabeçalho se repetem nas três páginas. Se mudar algum desses dados, altere em **todas** elas — a linha fica dentro de `<p class="legal-line">`.
+**Importante:** o rodapé (razão social, CNPJ e endereço) e o cabeçalho se repetem nas páginas (a `portaria.html` tem um rodapé próprio, mais simples). Se mudar algum desses dados, altere em **todas** elas, inclusive na `portaria.html` — a linha fica dentro de `<p class="legal-line">`.
 
 ## Domínio próprio
 
