@@ -17,6 +17,7 @@ O site também serve para a verificação de empresa da Meta (WhatsApp Business 
 | `assets/style.css` | Estilos (cores, fonte Inter, layout responsivo) |
 | `assets/script.js` | Menu no celular |
 | `assets/favicon.svg` | Ícone do site |
+| `img/aviso-encomenda.jpg` | Imagem do aviso de encomenda (WhatsApp) |
 
 HTML e CSS estáticos, sem frameworks e sem etapa de build.
 
