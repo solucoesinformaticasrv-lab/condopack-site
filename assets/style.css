@@ -172,3 +172,9 @@ section { padding: 56px 0; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 6px; }
 .legal-line { border-top: 1px solid #334155; padding-top: 20px; margin: 0; color: #E2E8F0; }
+
+/* Índice das páginas legais */
+.toc { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 1.5em 0; }
+.toc-title { font-weight: 700; margin-bottom: .5em; }
+.toc ol { margin: 0; padding-left: 1.25em; }
+.toc li { margin-bottom: .25em; }
