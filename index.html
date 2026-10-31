@@ -87,33 +87,10 @@
             </ul>
           </div>
 
-          <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual" role="img" aria-label="Tela de nova encomenda do app CondoPack, com aviso de WhatsApp de exemplo">
             <div class="phone">
               <div class="phone-screen">
-                <div class="phone-notch"></div>
-                <div class="app-top">
-                  <div class="app-status"><span>9:41</span><span>●●● ▮</span></div>
-                  <p class="app-hello">Olá! 👋</p>
-                  <p class="app-sub">Portaria · Condomínio Exemplo</p>
-                  <div class="app-pill"><div>Encomendas na portaria<strong>12 aguardando retirada</strong></div><span>›</span></div>
-                </div>
-                <div class="app-body">
-                  <p class="app-label">O que deseja fazer?</p>
-                  <div class="app-card featured">
-                    <span class="app-ico"><svg class="icon"><use href="#i-scan"/></svg></span>
-                    <div><strong>Nova encomenda</strong><span>Escaneie a etiqueta com IA</span></div>
-                  </div>
-                  <div class="app-card">
-                    <span class="app-ico"><svg class="icon"><use href="#i-box"/></svg></span>
-                    <div><strong>Cadastro manual</strong><span>Selecione bloco e morador</span></div>
-                  </div>
-                  <div class="app-grid">
-                    <div class="app-card"><span class="app-ico"><svg class="icon"><use href="#i-pen"/></svg></span><div><strong>Entregar</strong><span>Foto + assinatura</span></div></div>
-                    <div class="app-card"><span class="app-ico"><svg class="icon"><use href="#i-history"/></svg></span><div><strong>Histórico</strong><span>Por morador</span></div></div>
-                    <div class="app-card"><span class="app-ico"><svg class="icon"><use href="#i-user-check"/></svg></span><div><strong>Ponto</strong><span>Selfie do porteiro</span></div></div>
-                    <div class="app-card"><span class="app-ico"><svg class="icon"><use href="#i-chart"/></svg></span><div><strong>Relatório</strong><span>Mensal</span></div></div>
-                  </div>
-                </div>
+                <img src="img/app/nova-encomenda.jpg" alt="" width="600" height="1221">
               </div>
             </div>
 
@@ -125,7 +102,7 @@
               <span class="ok-ico"><svg class="icon"><use href="#i-check"/></svg></span>
               <div><strong>Entrega registrada</strong><span>Foto e assinatura salvas</span></div>
             </div>
-            <span class="illus-note">Imagens ilustrativas</span>
+            <span class="illus-note">Tela real do CondoPack · mensagem de exemplo</span>
           </div>
         </div>
       </div>
@@ -133,8 +110,8 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Registro com IA</span><span>Aviso no WhatsApp</span><span>Código de retirada</span><span>Comprovante com foto e assinatura</span><span>Histórico por morador</span><span>Registro de ponto</span><span>Relatório para o síndico</span>
-        <span>Registro com IA</span><span>Aviso no WhatsApp</span><span>Código de retirada</span><span>Comprovante com foto e assinatura</span><span>Histórico por morador</span><span>Registro de ponto</span><span>Relatório para o síndico</span>
+        <span>Registro com IA</span><span>Aviso no WhatsApp</span><span>Código de retirada</span><span>Comprovante com foto e assinatura</span><span>Histórico por morador</span><span>Foto de quem recebeu e entregou</span><span>Relatório para o síndico</span>
+        <span>Registro com IA</span><span>Aviso no WhatsApp</span><span>Código de retirada</span><span>Comprovante com foto e assinatura</span><span>Histórico por morador</span><span>Foto de quem recebeu e entregou</span><span>Relatório para o síndico</span>
       </div>
     </div>
 
@@ -175,7 +152,7 @@
             <li class="step-item">
               <button class="step-btn" type="button" aria-controls="painel-4" aria-pressed="false">
                 <span class="step-num">04</span>
-                <span><span class="step-title">Entregue e comprovada.</span><span class="step-text">A entrega fica registrada com foto e/ou assinatura, data, hora e o porteiro responsável.</span></span>
+                <span><span class="step-title">Entregue e comprovada.</span><span class="step-text">A entrega fica registrada com foto e/ou assinatura, data, hora e a foto do porteiro que entregou.</span></span>
                 <span class="step-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
             </li>
@@ -213,7 +190,7 @@
             <div class="flow-panel" id="painel-4" hidden>
               <div class="flow-meta"><span>Comprovante</span><span>18:41</span></div>
               <p class="flow-title">Entrega concluída</p>
-              <p>Foto e assinatura guardadas no histórico da moradora, com o nome do porteiro.</p>
+              <p>Foto e assinatura guardadas no histórico da moradora, com a foto do porteiro que entregou.</p>
               <div class="flow-foot"><span>Tudo registrado</span><svg class="icon" aria-hidden="true"><use href="#i-check2"/></svg></div>
             </div>
             <div class="flow-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
@@ -233,6 +210,7 @@
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Chega de caderno e de papelada</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Menos ligações para os apartamentos</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Prova de cada entrega</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Foto do porteiro que recebeu e do que entregou</li>
           </ul>
         </div>
         <div class="feature-grid">
@@ -268,14 +246,41 @@
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-user-check"/></svg></span>
-            <h3>Registro de ponto</h3>
-            <p>O porteiro bate o ponto com uma selfie, e fica claro quem estava na portaria em cada horário.</p>
+            <h3>Foto de quem recebeu e entregou</h3>
+            <p>Cada porteiro bate o ponto com uma selfie no início do turno. Assim, cada encomenda fica ligada à foto de quem recebeu e de quem entregou.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></span>
             <h3>Relatório mensal</h3>
             <p>Um resumo do mês da portaria para o síndico acompanhar a movimentação de encomendas.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Telas reais -->
+    <section id="telas" class="gallery-section" aria-labelledby="titulo-telas">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow">Por dentro do CondoPack</span>
+            <h2 id="titulo-telas" class="title-xl">Simples de usar. <span class="tone">Na rotina da portaria.</span></h2>
+          </div>
+          <p class="lead-text">Telas reais do app, usadas todos os dias pelos porteiros no celular ou no computador.</p>
+        </div>
+        <div class="gallery">
+          <figure class="shot">
+            <div class="shot-phone"><img src="img/app/entrega.jpg" alt="Tela de entrega do CondoPack com duas encomendas pendentes do mesmo morador, códigos de retirada e opções para capturar assinatura e foto" width="600" height="1113" loading="lazy"></div>
+            <figcaption><strong>Entrega com comprovante</strong>Várias encomendas de uma vez, com código de retirada, assinatura e foto.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-phone"><img src="img/app/porteiro.jpg" alt="Tela de identificação do porteiro no CondoPack, pedindo o nome do porteiro que está de plantão" width="600" height="1221" loading="lazy"></div>
+            <figcaption><strong>Quem está na portaria</strong>O porteiro se identifica no início do turno; o nome e a foto ficam nos registros.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="shot-phone"><img src="img/app/configuracoes.jpg" alt="Tela de configurações do CondoPack com mensagem do WhatsApp, WhatsApp da portaria e horários de troca de porteiro" width="600" height="1221" loading="lazy"></div>
+            <figcaption><strong>Do jeito do seu condomínio</strong>Personalize a mensagem do WhatsApp e os horários de troca de porteiro.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -302,7 +307,7 @@
             <svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>
             <p class="pillar-tag">Para o síndico</p>
             <h3>Tudo registrado, todo mês.</h3>
-            <p>Histórico de cada entrega, registro de ponto dos porteiros e um relatório mensal para acompanhar a portaria.</p>
+            <p>Histórico de cada entrega com a foto do porteiro que recebeu e do que entregou, registro de ponto e um relatório mensal da portaria.</p>
           </article>
         </div>
       </div>
@@ -372,6 +377,7 @@
             <p class="plan-unit" data-unidade>R$ 0,55 por unidade ao mês</p>
             <ul class="plan-rules">
               <li>R$ 0,55 por unidade ao mês</li>
+              <li>Mínimo de R$ 49,90/mês</li>
               <li>Ex.: 200 unidades = R$ 110,00/mês</li>
             </ul>
             <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20B%C3%A1sico%20do%20CondoPack" target="_blank" rel="noopener">Quero o Básico</a>

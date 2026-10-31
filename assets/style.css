@@ -422,3 +422,15 @@ section { padding: 72px 0; }
 .plans .plan-desc { flex: none; }
 @media (min-width: 900px) { .plans .plan-desc { min-height: 4.8em; } }
 .plan-rules { flex: 1; align-content: start; }
+
+/* Tela real dentro do celular do hero */
+.phone-screen > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* ---------- Telas reais ---------- */
+.gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 78%); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 4px 24px; margin: 0 -4px; }
+@media (min-width: 760px) { .gallery { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; } }
+.shot { margin: 0; scroll-snap-align: center; }
+.shot-phone { border-radius: 36px; background: #0B1220; padding: 8px; box-shadow: var(--shadow-lg); aspect-ratio: 600 / 1150; overflow: hidden; }
+.shot-phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 28px; }
+.shot figcaption { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+.shot figcaption strong { display: block; color: var(--ink); font-size: 1.05rem; margin-bottom: 4px; }

@@ -78,7 +78,7 @@
 
   // Preços mensais (R$) por plano, de acordo com o número de unidades
   var precos = {
-    basico: function (u) { return u * 0.55; },
+    basico: function (u) { return Math.max(49.90, u * 0.55); }, // mínimo de R$ 49,90
     pro: function (u) { return u <= 100 ? 116.35 : u <= 200 ? 168.35 : 168.35 + (u - 200) * 0.71; },
     premium: function (u) { return u <= 100 ? 214.80 : u <= 200 ? 310.80 : 310.80 + (u - 200) * 1.31; }
   };

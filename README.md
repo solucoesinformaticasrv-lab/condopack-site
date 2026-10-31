@@ -15,9 +15,10 @@ O site também serve para a verificação de empresa da Meta (WhatsApp Business 
 | `termos.html` | Termos de Uso |
 | `portaria.html` | Redireciona o morador ao WhatsApp da portaria: `portaria.html?n=55DDDNUMERO` (só aceita número brasileiro e só abre o WhatsApp) |
 | `assets/style.css` | Estilos (cores, fonte Inter, layout responsivo) |
-| `assets/script.js` | Menu no celular |
+| `assets/script.js` | Menu no celular, animação do "Como funciona" e calculadora de planos (preços em `precos`) |
 | `assets/favicon.svg` | Ícone do site |
 | `img/aviso-encomenda.jpg` | Imagem do aviso de encomenda (WhatsApp) |
+| `img/app/*.jpg` | Telas reais do app (dados pessoais borrados) usadas no hero e na seção "Por dentro do CondoPack" |
 
 HTML e CSS estáticos, sem frameworks e sem etapa de build.
 
