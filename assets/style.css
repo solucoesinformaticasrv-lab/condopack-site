@@ -312,7 +312,7 @@ section { padding: 72px 0; }
 .plan-name { font-size: 1.4rem; margin-bottom: 4px; }
 .plan-tagline { color: var(--blue); font-weight: 600; font-size: .9rem; margin-bottom: 14px; }
 .plan-desc { color: var(--muted); flex: 1; margin-bottom: 20px; }
-.plan-price { font-size: 1.6rem; font-weight: 800; color: var(--ink); letter-spacing: -.02em; margin-bottom: 18px; }
+.plan-price { font-size: 2.1rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: 14px; line-height: 1.1; }
 .plan-price small { display: block; font-size: .85rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
 .plan .btn { width: 100%; }
 .plan-featured { background: var(--navy); border-color: var(--navy); color: #CBD5E1; box-shadow: var(--shadow-lg); }
@@ -390,3 +390,35 @@ section { padding: 72px 0; }
 .footer-links a:hover { color: var(--blue); }
 .legal-line { border-top: 1px solid var(--border); padding-top: 20px; margin: 0; color: var(--text); font-size: .9rem; }
 .footer-wordmark { display: block; text-align: center; font-weight: 800; letter-spacing: -.05em; line-height: .8; font-size: clamp(4rem, 17vw, 13rem); color: transparent; background: linear-gradient(180deg, rgba(37, 99, 235, .12), rgba(37, 99, 235, 0) 85%); -webkit-background-clip: text; background-clip: text; margin-top: 12px; user-select: none; white-space: nowrap; }
+
+/* ---------- Calculadora de planos ---------- */
+.calc { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px; }
+@media (min-width: 768px) { .calc { padding: 28px 32px; } }
+.calc-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
+.calc-label { font-weight: 700; color: var(--ink); font-size: 1.05rem; }
+.calc-value { font-size: 1.9rem; font-weight: 800; color: var(--blue); letter-spacing: -.02em; }
+.calc-value span { font-size: 1rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.calc-range { width: 100%; height: 28px; margin: 0; background: transparent; accent-color: var(--blue); cursor: pointer; -webkit-appearance: none; appearance: none; }
+.calc-range::-webkit-slider-runnable-track { height: 8px; border-radius: 8px; background: linear-gradient(90deg, var(--blue) var(--p, 13%), var(--blue-soft) var(--p, 13%)); }
+.calc-range::-moz-range-track { height: 8px; border-radius: 8px; background: var(--blue-soft); }
+.calc-range::-moz-range-progress { height: 8px; border-radius: 8px; background: var(--blue); }
+.calc-range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -9px; border-radius: 50%; background: #fff; border: 3px solid var(--blue); box-shadow: 0 4px 12px rgba(37, 99, 235, .35); }
+.calc-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 3px solid var(--blue); box-shadow: 0 4px 12px rgba(37, 99, 235, .35); }
+.calc-scale { position: relative; height: 20px; margin-top: 6px; font-size: .78rem; color: var(--muted); }
+.calc-scale span { position: absolute; transform: translateX(-50%); }
+.calc-scale span:nth-child(1) { left: 0; transform: none; }
+.calc-scale span:nth-child(2) { left: 12.86%; }
+.calc-scale span:nth-child(3) { left: 27.14%; }
+.calc-scale span:nth-child(4) { left: 55.71%; }
+.calc-scale span:nth-child(5) { right: 0; left: auto; transform: none; }
+.calc-help { margin: 12px 0 0; color: var(--muted); font-size: .9rem; }
+.plan-price span { display: inline; font-size: inherit; color: inherit; font-weight: inherit; }
+.plan-price small { display: inline; margin-left: 2px; }
+.plan-unit { margin: -10px 0 16px; font-size: .9rem; font-weight: 600; color: var(--blue); }
+.plan-featured .plan-unit { color: #93C5FD; }
+.plan-rules { list-style: none; padding: 14px 0 0; margin: 0 0 20px; border-top: 1px solid var(--border); display: grid; gap: 6px; font-size: .88rem; color: var(--muted); }
+.plan-featured .plan-rules { border-top-color: rgba(255, 255, 255, .14); color: #A5B4D0; }
+.plan-rules li::before { content: "•"; color: var(--blue); margin-right: 8px; }
+.plans .plan-desc { flex: none; }
+@media (min-width: 900px) { .plans .plan-desc { min-height: 4.8em; } }
+.plan-rules { flex: 1; align-content: start; }

@@ -67,3 +67,49 @@
     iniciar();
   }
 })();
+
+// Calculadora de planos por número de unidades
+(function () {
+  var calc = document.querySelector('[data-calc]');
+  if (!calc) return;
+  var range = document.getElementById('unidades');
+  var out = document.getElementById('unidadesOut');
+  var LIMITE = 700; // acima disso: proposta sob medida
+
+  // Preços mensais (R$) por plano, de acordo com o número de unidades
+  var precos = {
+    basico: function (u) { return u * 0.55; },
+    pro: function (u) { return u <= 100 ? 116.35 : u <= 200 ? 168.35 : 168.35 + (u - 200) * 0.71; },
+    premium: function (u) { return u <= 100 ? 214.80 : u <= 200 ? 310.80 : 310.80 + (u - 200) * 1.31; }
+  };
+
+  function reais(v) {
+    return 'R$ ' + v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+  function atualizar() {
+    var u = Number(range.value);
+    var acima = u > LIMITE;
+    out.textContent = acima ? '700+' : String(u);
+    range.setAttribute('aria-valuetext', acima ? 'Mais de 700 unidades' : u + ' unidades');
+    range.style.setProperty('--p', ((u - range.min) / (range.max - range.min) * 100) + '%');
+    document.querySelectorAll('[data-plan]').forEach(function (card) {
+      var preco = card.querySelector('[data-preco]');
+      var unidade = card.querySelector('[data-unidade]');
+      var small = card.querySelector('.plan-price small');
+      if (acima) {
+        preco.textContent = 'Sob consulta';
+        small.hidden = true;
+        unidade.textContent = 'Proposta sob medida';
+        return;
+      }
+      var valor = precos[card.getAttribute('data-plan')](u);
+      preco.textContent = reais(valor);
+      small.hidden = false;
+      unidade.textContent = reais(valor / u) + ' por unidade ao mês';
+    });
+  }
+
+  range.addEventListener('input', atualizar);
+  atualizar();
+})();

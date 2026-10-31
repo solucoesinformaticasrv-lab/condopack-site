@@ -83,6 +83,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Leitura de etiqueta com IA</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Aviso pelo WhatsApp</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Comprovante de entrega</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Implantação simples</li>
             </ul>
           </div>
 
@@ -347,40 +348,68 @@
         <div class="split-head">
           <div>
             <span class="eyebrow">Planos</span>
-            <h2 id="titulo-planos" class="title-xl">Escolha como o aviso <span class="tone">chega ao morador.</span></h2>
+            <h2 id="titulo-planos" class="title-xl">Gestão completa. <span class="tone">Preço do tamanho do seu condomínio.</span></h2>
           </div>
           <p class="lead-text">Todos os planos incluem a gestão completa de encomendas. A diferença está na forma de envio do aviso pelo WhatsApp.</p>
         </div>
+
+        <div class="calc" data-calc>
+          <div class="calc-top">
+            <label class="calc-label" for="unidades">Quantas unidades tem o seu condomínio?</label>
+            <div class="calc-value"><output id="unidadesOut" for="unidades">100</output> <span>unidades</span></div>
+          </div>
+          <input class="calc-range" type="range" id="unidades" min="10" max="710" step="10" value="100" aria-describedby="calcAjuda">
+          <div class="calc-scale" aria-hidden="true"><span>10</span><span>100</span><span>200</span><span>400</span><span>700+</span></div>
+          <p class="calc-help" id="calcAjuda">Arraste para ver o valor de cada plano. Acima de 700 unidades, fazemos uma proposta sob medida.</p>
+        </div>
+
         <div class="plans">
-          <article class="plan">
+          <article class="plan" data-plan="basico">
             <h3 class="plan-name">Básico</h3>
             <p class="plan-tagline">Aviso enviado pela portaria</p>
             <p class="plan-desc">O aviso por WhatsApp é enviado manualmente pela própria portaria.</p>
-            <p class="plan-price">Fale conosco <small>Valor sob consulta</small></p>
-            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20plano%20B%C3%A1sico%20do%20CondoPack" target="_blank" rel="noopener">Consultar o Básico</a>
+            <p class="plan-price"><span data-preco>R$ 55,00</span><small>/mês</small></p>
+            <p class="plan-unit" data-unidade>R$ 0,55 por unidade ao mês</p>
+            <ul class="plan-rules">
+              <li>R$ 0,55 por unidade ao mês</li>
+              <li>Ex.: 200 unidades = R$ 110,00/mês</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20B%C3%A1sico%20do%20CondoPack" target="_blank" rel="noopener">Quero o Básico</a>
           </article>
-          <article class="plan plan-featured">
+          <article class="plan plan-featured" data-plan="pro">
             <span class="plan-badge">Automático</span>
             <h3 class="plan-name">PRO</h3>
             <p class="plan-tagline">Número oficial do CondoPack</p>
             <p class="plan-desc">O aviso por WhatsApp é enviado automaticamente, a partir do número oficial do CondoPack.</p>
-            <p class="plan-price">Fale conosco <small>Valor sob consulta</small></p>
-            <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20plano%20PRO%20do%20CondoPack" target="_blank" rel="noopener">Consultar o PRO</a>
+            <p class="plan-price"><span data-preco>R$ 116,35</span><small>/mês</small></p>
+            <p class="plan-unit" data-unidade>R$ 1,16 por unidade ao mês</p>
+            <ul class="plan-rules">
+              <li>Até 100 unidades: R$ 116,35/mês</li>
+              <li>De 101 a 200: R$ 168,35/mês</li>
+              <li>Acima de 200: R$ 168,35 + R$ 0,71 por unidade extra</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20PRO%20do%20CondoPack" target="_blank" rel="noopener">Quero o PRO</a>
           </article>
-          <article class="plan">
+          <article class="plan" data-plan="premium">
             <span class="plan-badge">Automático</span>
             <h3 class="plan-name">Premium</h3>
             <p class="plan-tagline">WhatsApp da própria portaria</p>
             <p class="plan-desc">O aviso por WhatsApp é enviado automaticamente, a partir do próprio número de WhatsApp da portaria.</p>
-            <p class="plan-price">Fale conosco <small>Valor sob consulta</small></p>
-            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20plano%20Premium%20do%20CondoPack" target="_blank" rel="noopener">Consultar o Premium</a>
+            <p class="plan-price"><span data-preco>R$ 214,80</span><small>/mês</small></p>
+            <p class="plan-unit" data-unidade>R$ 2,15 por unidade ao mês</p>
+            <ul class="plan-rules">
+              <li>Até 100 unidades: R$ 214,80/mês</li>
+              <li>De 101 a 200: R$ 310,80/mês</li>
+              <li>Acima de 200: R$ 310,80 + R$ 1,31 por unidade extra</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20Premium%20do%20CondoPack" target="_blank" rel="noopener">Quero o Premium</a>
           </article>
         </div>
         <div class="plans-includes">
           <p>Em todos os planos</p>
           <ul>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gestão completa de encomendas</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Aviso ao morador pelo WhatsApp</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Implantação simples</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Atendimento direto pelo WhatsApp</li>
           </ul>
         </div>
@@ -402,7 +431,11 @@
           </details>
           <details>
             <summary>Funciona no computador da portaria? <span class="plus" aria-hidden="true"></span></summary>
-            <p>Sim. A portaria pode usar o CondoPack no computador, com uma webcam para as fotos, e também no celular.</p>
+            <p>Sim. A portaria usa o CondoPack no computador, com uma webcam para as fotos, ou no celular — sem precisar baixar nada.</p>
+          </details>
+          <details>
+            <summary>A implantação é demorada? <span class="plus" aria-hidden="true"></span></summary>
+            <p>Não. Você não precisa cadastrar unidade por unidade: o CondoPack se integra aos contatos do telefone da portaria e as unidades entram praticamente de forma automática.</p>
           </details>
           <details>
             <summary>Onde ficam os dados do condomínio? <span class="plus" aria-hidden="true"></span></summary>
@@ -418,7 +451,7 @@
           </details>
           <details>
             <summary>Quanto custa? <span class="plus" aria-hidden="true"></span></summary>
-            <p>Fale com a gente pelo WhatsApp ou por e-mail para receber os valores e as condições para o seu condomínio.</p>
+            <p>Depende do plano e do número de unidades. Use a <a href="#planos">calculadora dos planos</a> para ver o valor mensal; acima de 700 unidades, fazemos uma proposta sob medida.</p>
           </details>
         </div>
       </div>
