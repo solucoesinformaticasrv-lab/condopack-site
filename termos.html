@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  </svg>
+
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="site-header">
@@ -33,7 +37,8 @@
           <li><a href="./#como-funciona">Como funciona</a></li>
           <li><a href="./#funcionalidades">Funcionalidades</a></li>
           <li><a href="./#planos">Planos</a></li>
-          <li><a class="btn btn-primary" href="./#contato">Fale conosco</a></li>
+          <li><a href="./#duvidas">Dúvidas</a></li>
+          <li class="nav-cta"><a class="btn btn-dark" href="./#contato">Fale conosco <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
         </ul>
       </nav>
     </div>
@@ -86,28 +91,35 @@
 
 <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
-        <div>
-          <p class="footer-brand"><span aria-hidden="true">📦</span> CondoPack</p>
-          <p>Software de gestão de encomendas para portarias de condomínios no Brasil.</p>
+      <div class="footer-card">
+        <div class="footer-top">
+          <div>
+            <p class="footer-brand"><span aria-hidden="true">📦</span> CondoPack</p>
+            <p class="footer-about">Software de gestão de encomendas para portarias de condomínios no Brasil. Da chegada à retirada, cada encomenda registrada.</p>
+          </div>
+          <div>
+            <p class="footer-title">Conheça</p>
+            <ul class="footer-links">
+              <li><a href="./#como-funciona">Como funciona</a></li>
+              <li><a href="./#funcionalidades">Funcionalidades</a></li>
+              <li><a href="./#planos">Planos</a></li>
+              <li><a href="./#duvidas">Dúvidas</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Contato e informações</p>
+            <ul class="footer-links">
+              <li><a href="https://wa.me/5516991608868" target="_blank" rel="noopener">WhatsApp: (16) 99160-8868</a></li>
+              <li><a href="mailto:solucoesinformaticas.rv@gmail.com">solucoesinformaticas.rv@gmail.com</a></li>
+              <li><a href="privacidade.html">Política de Privacidade</a></li>
+              <li><a href="termos.html">Termos de Uso</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <p class="footer-title">Institucional</p>
-          <ul class="footer-links">
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-            <li><a href="termos.html">Termos de Uso</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-title">Contato</p>
-          <ul class="footer-links">
-            <li><a href="mailto:solucoesinformaticas.rv@gmail.com">solucoesinformaticas.rv@gmail.com</a></li>
-            <li><a href="https://wa.me/5516991608868" target="_blank" rel="noopener">WhatsApp: (16) 99160-8868</a></li>
-          </ul>
-        </div>
+        <p class="legal-line">© 2026 Brayan ramirez — CNPJ 58.945.358/0001-77 — rua sergio ache 1151 riberao preto sao paulo, CEP 14056-440</p>
       </div>
-      <p class="legal-line">© 2026 Brayan ramirez — CNPJ 58.945.358/0001-77 — rua sergio ache 1151 riberao preto sao paulo, CEP 14056-440</p>
     </div>
+    <span class="footer-wordmark" aria-hidden="true">CondoPack</span>
   </footer>
 
   <script src="assets/script.js" defer></script>
