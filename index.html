@@ -4,23 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CondoPack — Gestão de encomendas para portarias de condomínios</title>
-  <meta name="description" content="CondoPack é um software (SaaS) de gestão de encomendas para portarias de condomínios: registro com leitura de etiqueta por IA, aviso ao morador por WhatsApp com código de retirada e comprovante de entrega.">
+  <meta name="description" content="Sistema para portarias: registre encomendas, avise moradores por WhatsApp com código de retirada e controle as retiradas com assinatura e foto. Sem instalar app.">
   <link rel="canonical" href="https://solucoesinformaticasrv-lab.github.io/condopack-site/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="CondoPack">
   <meta property="og:title" content="CondoPack — Gestão de encomendas para portarias de condomínios">
-  <meta property="og:description" content="Registre encomendas, avise o morador por WhatsApp com código de retirada e guarde o comprovante de entrega.">
+  <meta property="og:description" content="Sistema para portarias: registre encomendas, avise moradores por WhatsApp com código de retirada e controle as retiradas com assinatura e foto. Sem instalar app.">
   <meta property="og:url" content="https://solucoesinformaticasrv-lab.github.io/condopack-site/">
   <meta property="og:image" content="https://solucoesinformaticasrv-lab.github.io/condopack-site/img/aviso-encomenda.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
+  <meta property="og:image:alt" content="CondoPack: Chegou sua encomenda! Retire na portaria do seu condomínio.">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#2563EB">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "CondoPack",
+        "legalName": "Brayan ramirez",
+        "taxID": "58.945.358/0001-77",
+        "url": "https://solucoesinformaticasrv-lab.github.io/condopack-site/",
+        "email": "solucoesinformaticas.rv@gmail.com",
+        "telephone": "+55-16-99160-8868",
+        "address": { "@type": "PostalAddress", "streetAddress": "rua sergio ache 1151", "addressLocality": "Ribeirão Preto", "addressRegion": "SP", "postalCode": "14056-440", "addressCountry": "BR" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CondoPack",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Sistema para portarias: registre encomendas, avise moradores por WhatsApp e controle as retiradas.",
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -40,6 +67,10 @@
     <symbol id="i-check2" viewBox="0 0 24 24"><path d="M2 12.5 6.5 17 15 8M10 15.5l1.5 1.5L22 6.5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1 1 17.4 0z"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M8 7h4M8 11h4M8 15h4M2 21h20"/></symbol>
     <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M15 8l2 2"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
     <symbol id="i-whats" viewBox="0 0 24 24"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z"/></symbol>
@@ -74,15 +105,16 @@
           <div>
             <p class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">📦</span> Gestão de encomendas para portarias</p>
             <h1 id="titulo-hero">Encomendas sob controle. <span class="accent">Do recebimento à entrega.</span></h1>
-            <p class="lead">O CondoPack registra cada encomenda na portaria, avisa o morador pelo WhatsApp e guarda o comprovante da entrega. Simples para o porteiro, tranquilo para o morador e para o síndico.</p>
+            <p class="lead">Sistema para portarias: registre encomendas, avise moradores por WhatsApp e controle as retiradas. Cada entrega com assinatura ou foto, e um relatório mensal para o síndico.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20CondoPack" target="_blank" rel="noopener">Quero conhecer <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+              <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20CondoPack" target="_blank" rel="noopener">Agendar demonstração <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
               <a class="btn btn-ghost" href="#como-funciona">Veja como funciona</a>
             </div>
             <ul class="hero-points">
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Leitura de etiqueta com IA</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Aviso pelo WhatsApp</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Comprovante de entrega</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sem instalar app</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Implantação simples</li>
             </ul>
           </div>
@@ -96,7 +128,7 @@
 
             <div class="float-card float-wa">
               <div class="float-head"><span class="wa-dot"><svg class="icon"><use href="#i-chat"/></svg></span> CondoPack <span class="float-time">agora</span></div>
-              <p>📦 Olá, Ana! Chegou uma encomenda para você na portaria. Código de retirada: <code>4821</code></p>
+              <p>📦 Olá, Ana! Chegou uma encomenda para você na portaria. Código de retirada: <code>K7P2QX</code></p>
             </div>
             <div class="float-card float-ok">
               <span class="ok-ico"><svg class="icon"><use href="#i-check"/></svg></span>
@@ -115,13 +147,49 @@
       </div>
     </div>
 
+    <!-- O problema -->
+    <section class="problem" aria-labelledby="titulo-problema">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow">O problema</span>
+            <h2 id="titulo-problema" class="title-xl">Caderno, planilha e mensagem solta. <span class="tone">Na portaria, isso vira dor de cabeça.</span></h2>
+          </div>
+          <p class="lead-text">Muitas portarias ainda controlam as encomendas no improviso. E quem paga a conta é o porteiro, o morador e o síndico.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="feature problem-card">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-alert"/></svg></span>
+            <h3>Encomenda que some</h3>
+            <p>Sem registro, o pacote fica perdido na prateleira — ou ninguém sabe onde foi parar.</p>
+          </article>
+          <article class="feature problem-card">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-chat"/></svg></span>
+            <h3>Morador sem aviso</h3>
+            <p>O morador não fica sabendo que chegou algo, e a portaria perde tempo ligando.</p>
+          </article>
+          <article class="feature problem-card">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-pen"/></svg></span>
+            <h3>Nenhuma prova de retirada</h3>
+            <p>Quando alguém reclama, não há assinatura, foto nem registro de quem entregou.</p>
+          </article>
+          <article class="feature problem-card">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></span>
+            <h3>Síndico sem números</h3>
+            <p>Sem dados, fica difícil acompanhar a portaria e responder às reclamações.</p>
+          </article>
+        </div>
+        <p class="problem-answer">Com o CondoPack, cada encomenda tem <strong>registro, aviso e comprovante</strong>.</p>
+      </div>
+    </section>
+
     <!-- Como funciona -->
     <section id="como-funciona" aria-labelledby="titulo-como-funciona">
       <div class="container">
         <div class="split-head">
           <div>
             <span class="eyebrow">Como funciona</span>
-            <h2 id="titulo-como-funciona" class="title-xl">Quatro passos. <span class="tone">Nenhuma encomenda perdida.</span></h2>
+            <h2 id="titulo-como-funciona" class="title-xl">Recebe, avisa, entrega. <span class="tone">E o síndico acompanha.</span></h2>
           </div>
           <p class="lead-text">Um caminho simples para quem recebe na portaria, para quem espera em casa e para quem administra o condomínio.</p>
         </div>
@@ -131,28 +199,28 @@
             <li class="step-item is-active">
               <button class="step-btn" type="button" aria-controls="painel-1" aria-pressed="true">
                 <span class="step-num">01</span>
-                <span><span class="step-title">Recebida e registrada.</span><span class="step-text">O porteiro cadastra a encomenda à mão ou fotografa a etiqueta, e a inteligência artificial preenche os dados.</span></span>
+                <span><span class="step-title">Recebe.</span><span class="step-text">O porteiro fotografa a etiqueta e a IA preenche os dados — ou cadastra à mão. A prateleira onde o pacote ficou já fica anotada.</span></span>
                 <span class="step-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
             </li>
             <li class="step-item">
               <button class="step-btn" type="button" aria-controls="painel-2" aria-pressed="false">
                 <span class="step-num">02</span>
-                <span><span class="step-title">O morador já sabe.</span><span class="step-text">Chega um aviso no WhatsApp com o código de retirada. A portaria não precisa ligar para ninguém.</span></span>
+                <span><span class="step-title">Avisa.</span><span class="step-text">O morador recebe no WhatsApp o aviso com o código de retirada. Ninguém precisa ligar para o apartamento.</span></span>
                 <span class="step-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
             </li>
             <li class="step-item">
               <button class="step-btn" type="button" aria-controls="painel-3" aria-pressed="false">
                 <span class="step-num">03</span>
-                <span><span class="step-title">Retirada com código.</span><span class="step-text">O morador informa o código e o porteiro encontra a encomenda — ou várias de uma vez.</span></span>
+                <span><span class="step-title">Entrega.</span><span class="step-text">Com o código, o porteiro confirma a entrega com assinatura na tela e/ou foto — várias encomendas de uma vez.</span></span>
                 <span class="step-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
             </li>
             <li class="step-item">
               <button class="step-btn" type="button" aria-controls="painel-4" aria-pressed="false">
                 <span class="step-num">04</span>
-                <span><span class="step-title">Entregue e comprovada.</span><span class="step-text">A entrega fica registrada com foto e/ou assinatura, data, hora e a foto do porteiro que entregou.</span></span>
+                <span><span class="step-title">Relatório.</span><span class="step-text">Tudo fica registrado com data, hora e porteiro. No fim do mês, o síndico tem os números da portaria.</span></span>
                 <span class="step-go" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
             </li>
@@ -165,9 +233,9 @@
               <span class="flow-line"></span>
               <span class="flow-node"><svg class="icon"><use href="#i-chat"/></svg></span>
               <span class="flow-line"></span>
-              <span class="flow-node"><svg class="icon"><use href="#i-key"/></svg></span>
+              <span class="flow-node"><svg class="icon"><use href="#i-pen"/></svg></span>
               <span class="flow-line"></span>
-              <span class="flow-node"><svg class="icon"><use href="#i-shield"/></svg></span>
+              <span class="flow-node"><svg class="icon"><use href="#i-chart"/></svg></span>
             </div>
             <div class="flow-panel" id="painel-1">
               <div class="flow-meta"><span>Portaria</span><span>14:02</span></div>
@@ -178,20 +246,20 @@
             <div class="flow-panel" id="painel-2" hidden>
               <div class="flow-meta"><span>WhatsApp</span><span>14:02</span></div>
               <p class="flow-title">Aviso enviado</p>
-              <p>Olá, Ana! Sua encomenda chegou na portaria. Código de retirada: <strong>4821</strong></p>
-              <div class="flow-foot"><span>Mensagem entregue</span><svg class="icon" aria-hidden="true"><use href="#i-check2"/></svg></div>
+              <p>Olá, Ana! Sua encomenda chegou na portaria. Código de retirada: <strong>K7P2QX</strong></p>
+              <div class="flow-foot"><span>Aviso enviado com o código</span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
             </div>
             <div class="flow-panel" id="painel-3" hidden>
-              <div class="flow-meta"><span>Portaria</span><span>18:40</span></div>
-              <p class="flow-title">Código conferido</p>
-              <p>Código 4821 confere. Há 2 encomendas para Ana — dá para entregar todas de uma vez.</p>
-              <div class="flow-foot"><span>Pronta para entregar</span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
+              <div class="flow-meta"><span>Portaria</span><span>18:41</span></div>
+              <p class="flow-title">Entrega concluída</p>
+              <p>Código K7P2QX confere. 2 encomendas entregues de uma vez, com assinatura e foto.</p>
+              <div class="flow-foot"><span>Comprovante salvo</span><svg class="icon" aria-hidden="true"><use href="#i-check2"/></svg></div>
             </div>
             <div class="flow-panel" id="painel-4" hidden>
-              <div class="flow-meta"><span>Comprovante</span><span>18:41</span></div>
-              <p class="flow-title">Entrega concluída</p>
-              <p>Foto e assinatura guardadas no histórico da moradora, com a foto do porteiro que entregou.</p>
-              <div class="flow-foot"><span>Tudo registrado</span><svg class="icon" aria-hidden="true"><use href="#i-check2"/></svg></div>
+              <div class="flow-meta"><span>Relatório</span><span>Fim do mês</span></div>
+              <p class="flow-title">Relatório do mês</p>
+              <p>Recebidas, entregues, tempo médio de retirada, retiradas em até 24 h e uma tabela por porteiro.</p>
+              <div class="flow-foot"><span>Imprimir ou salvar em PDF</span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
             </div>
             <div class="flow-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
           </div>
@@ -216,28 +284,38 @@
         <div class="feature-grid">
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-scan"/></svg></span>
-            <h3>Leitura de etiqueta com IA</h3>
-            <p>Fotografe a etiqueta e os dados do destinatário são preenchidos. Ou cadastre à mão, se preferir.</p>
+            <h3>IA que lê a etiqueta</h3>
+            <p>Fotografe a etiqueta: a IA lê nome, apartamento, bloco e código de rastreio, e o sistema encontra o morador no cadastro. Na dúvida, não adivinha — o porteiro confere.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-chat"/></svg></span>
             <h3>Aviso pelo WhatsApp</h3>
-            <p>O morador recebe o aviso com o código de retirada no aplicativo que já usa todo dia.</p>
+            <p>Com código de retirada, quem recebeu e a prateleira. Depois de enviado, o botão fica cinza em todos os aparelhos: ninguém avisa duas vezes.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-pen"/></svg></span>
             <h3>Comprovante de entrega</h3>
-            <p>Assinatura e/ou foto na hora da retirada, para dar segurança à portaria e ao condomínio.</p>
-          </article>
-          <article class="feature">
-            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-history"/></svg></span>
-            <h3>Histórico por morador</h3>
-            <p>Consulte as encomendas recebidas e entregues de cada morador, apartamento e bloco.</p>
+            <p>Assinatura na tela e/ou foto na hora da retirada, com data, hora e o porteiro que entregou.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
-            <h3>Várias de uma vez</h3>
-            <p>Entregue todas as encomendas do mesmo morador numa única retirada.</p>
+            <h3>Entrega múltipla</h3>
+            <p>O morador tem vários pacotes? Entregue todos de uma vez, com uma única assinatura ou foto.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-user-check"/></svg></span>
+            <h3>Foto de quem recebeu e entregou</h3>
+            <p>No início do turno, o porteiro informa o nome e tira uma selfie. Assim, cada encomenda fica ligada a quem recebeu e a quem entregou.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-gauge"/></svg></span>
+            <h3>Painel do dia</h3>
+            <p>Indicadores clicáveis na tela inicial: pendentes, entregues hoje e paradas há mais de 3 ou 7 dias. Com filtros e busca.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-history"/></svg></span>
+            <h3>Moradores e histórico</h3>
+            <p>Cadastro, perfil e histórico de encomendas de cada morador. A busca também encontra nos contatos do Google da portaria.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-shelf"/></svg></span>
@@ -245,15 +323,41 @@
             <p>Anote a prateleira onde o pacote foi guardado e encontre rápido na hora da retirada.</p>
           </article>
           <article class="feature">
-            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-user-check"/></svg></span>
-            <h3>Foto de quem recebeu e entregou</h3>
-            <p>Cada porteiro bate o ponto com uma selfie no início do turno. Assim, cada encomenda fica ligada à foto de quem recebeu e de quem entregou.</p>
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-ban"/></svg></span>
+            <h3>Nada se apaga</h3>
+            <p>Editar ou cancelar uma encomenda exige motivo, e o registro continua no histórico.</p>
           </article>
           <article class="feature">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-chart"/></svg></span>
             <h3>Relatório mensal</h3>
-            <p>Um resumo do mês da portaria para o síndico acompanhar a movimentação de encomendas.</p>
+            <p>Os números da portaria para o síndico, protegidos por senha de administrador. Imprima ou salve em PDF.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Relatório -->
+    <section class="report" aria-labelledby="titulo-relatorio">
+      <div class="container trust-wrap">
+        <div>
+          <span class="eyebrow">Para o síndico</span>
+          <h2 id="titulo-relatorio" class="title-xl">Relatório mensal. <span class="tone">Os números da portaria, sem planilha.</span></h2>
+          <p class="lead-text">Todo mês, o síndico acompanha a movimentação de encomendas e o trabalho de cada porteiro. O relatório fica protegido por senha de administrador.</p>
+          <div class="timer-chips">
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Senha de administrador</span>
+            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Imprimir ou salvar em PDF</span>
+          </div>
+        </div>
+        <div class="trust-card">
+          <p class="report-title">O que vem no relatório</p>
+          <ul class="report-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg> Encomendas recebidas, entregues e canceladas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-history"/></svg> Tempo médio de retirada</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Porcentagem retirada em até 24 horas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg> Dia com mais movimento</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg> Tabela por porteiro</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg> Encomendas paradas há 7 dias ou mais</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -275,7 +379,7 @@
           </figure>
           <figure class="shot">
             <div class="shot-phone"><img src="img/app/porteiro.jpg" alt="Tela de identificação do porteiro no CondoPack, pedindo o nome do porteiro que está de plantão" width="600" height="1221" loading="lazy"></div>
-            <figcaption><strong>Quem está na portaria</strong>O porteiro se identifica no início do turno; o nome e a foto ficam nos registros.</figcaption>
+            <figcaption><strong>Quem está na portaria</strong>No início do turno, o porteiro informa o nome e tira uma selfie; recebimentos e entregas ficam ligados a ele.</figcaption>
           </figure>
           <figure class="shot">
             <div class="shot-phone"><img src="img/app/configuracoes.jpg" alt="Tela de configurações do CondoPack com mensagem do WhatsApp, WhatsApp da portaria e horários de troca de porteiro" width="600" height="1221" loading="lazy"></div>
@@ -307,7 +411,13 @@
             <svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>
             <p class="pillar-tag">Para o síndico</p>
             <h3>Tudo registrado, todo mês.</h3>
-            <p>Histórico de cada entrega com a foto do porteiro que recebeu e do que entregou, registro de ponto e um relatório mensal da portaria.</p>
+            <p>Comprovante de cada entrega, com quem recebeu e quem entregou, e um relatório mensal da portaria. Menos reclamação, mais controle.</p>
+          </article>
+          <article class="pillar">
+            <svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>
+            <p class="pillar-tag">Para a administradora</p>
+            <h3>Um padrão para vários condomínios.</h3>
+            <p>O mesmo sistema em cada condomínio, fácil de implantar, com os dados de cada um separados e relatório mensal.</p>
           </article>
         </div>
       </div>
@@ -317,7 +427,7 @@
     <section aria-labelledby="titulo-dados">
       <div class="container trust-wrap">
         <div>
-          <span class="eyebrow">Privacidade e LGPD</span>
+          <span class="eyebrow">Segurança, backup e LGPD</span>
           <h2 id="titulo-dados" class="title-xl">Os dados do condomínio <span class="tone">ficam com o condomínio.</span></h2>
           <p class="lead-text">A planilha e as fotos ficam na conta Google do próprio condomínio. O CondoPack usa os dados só para gerenciar e avisar as encomendas — nada de venda ou publicidade.</p>
           <div class="timer-chips">
@@ -329,19 +439,23 @@
         <div class="trust-card">
           <div class="trust-row">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-cloud"/></svg></span>
-            <div><strong>Na conta Google do condomínio</strong><span>Planilha e fotos ficam no Google Drive do próprio condomínio.</span></div>
+            <div><strong>No Google do próprio condomínio</strong><span>Planilha e fotos ficam no Drive do condomínio, separadas dos outros clientes.</span></div>
           </div>
           <div class="trust-row">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-lock"/></svg></span>
-            <div><strong>Acesso só para quem é autorizado</strong><span>Entrada com conta Google autorizada, e cada condomínio vê só os seus dados.</span></div>
+            <div><strong>Acesso controlado</strong><span>Entrada com conta Google autorizada. Configurações e relatório protegidos por senha de administrador, verificada no servidor.</span></div>
+          </div>
+          <div class="trust-row">
+            <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-history"/></svg></span>
+            <div><strong>Backup automático diário</strong><span>Uma cópia de segurança por dia; ficam guardadas as 5 mais recentes.</span></div>
           </div>
           <div class="trust-row">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-trash"/></svg></span>
-            <div><strong>Fotos apagadas automaticamente</strong><span>Etiquetas, assinaturas e fotos de entrega são excluídas 90 dias depois.</span></div>
+            <div><strong>Imagens apagadas em 90 dias</strong><span>Selfies, etiquetas, assinaturas e fotos de entrega são excluídas sozinhas. Os registros em texto continuam.</span></div>
           </div>
           <div class="trust-row">
             <span class="feature-ico" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
-            <div><strong>De acordo com a LGPD</strong><span>O condomínio é o controlador dos dados; o CondoPack trata em nome dele.</span></div>
+            <div><strong>De acordo com a LGPD</strong><span>O condomínio é o controlador dos dados; o CondoPack é o operador e trata em nome dele.</span></div>
           </div>
         </div>
       </div>
@@ -355,7 +469,7 @@
             <span class="eyebrow">Planos</span>
             <h2 id="titulo-planos" class="title-xl">Gestão completa. <span class="tone">Preço do tamanho do seu condomínio.</span></h2>
           </div>
-          <p class="lead-text">Todos os planos incluem a gestão completa de encomendas. A diferença está na forma de envio do aviso pelo WhatsApp.</p>
+          <p class="lead-text">Todos os planos incluem tudo: IA, comprovante de entrega, relatório, backup e LGPD. A diferença está só na forma de envio do aviso.</p>
         </div>
 
         <div class="calc" data-calc>
@@ -371,8 +485,8 @@
         <div class="plans">
           <article class="plan" data-plan="basico">
             <h3 class="plan-name">Básico</h3>
-            <p class="plan-tagline">Aviso enviado pela portaria</p>
-            <p class="plan-desc">O aviso por WhatsApp é enviado manualmente pela própria portaria.</p>
+            <p class="plan-tagline">Aviso com um toque</p>
+            <p class="plan-desc">O porteiro toca no botão e a mensagem já abre pronta no WhatsApp da portaria. É só enviar.</p>
             <p class="plan-price"><span data-preco>R$ 55,00</span><small>/mês</small></p>
             <p class="plan-unit" data-unidade>R$ 0,55 por unidade ao mês</p>
             <ul class="plan-rules">
@@ -385,8 +499,8 @@
           <article class="plan plan-featured" data-plan="pro">
             <span class="plan-badge">Automático</span>
             <h3 class="plan-name">PRO</h3>
-            <p class="plan-tagline">Número oficial do CondoPack</p>
-            <p class="plan-desc">O aviso por WhatsApp é enviado automaticamente, a partir do número oficial do CondoPack.</p>
+            <p class="plan-tagline">Aviso automático</p>
+            <p class="plan-desc">O aviso sai sozinho do número oficial do CondoPack, com a foto da etiqueta, e traz um botão que abre o WhatsApp da portaria. O porteiro não precisa fazer nada.</p>
             <p class="plan-price"><span data-preco>R$ 116,35</span><small>/mês</small></p>
             <p class="plan-unit" data-unidade>R$ 1,16 por unidade ao mês</p>
             <ul class="plan-rules">
@@ -396,27 +510,33 @@
             </ul>
             <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20PRO%20do%20CondoPack" target="_blank" rel="noopener">Quero o PRO</a>
           </article>
-          <article class="plan" data-plan="premium">
-            <span class="plan-badge">Automático</span>
+          <article class="plan plan-soon" data-plan="premium">
+            <span class="plan-badge">Em breve</span>
             <h3 class="plan-name">Premium</h3>
-            <p class="plan-tagline">WhatsApp da própria portaria</p>
-            <p class="plan-desc">O aviso por WhatsApp é enviado automaticamente, a partir do próprio número de WhatsApp da portaria.</p>
+            <p class="plan-tagline">Do WhatsApp da própria portaria</p>
+            <p class="plan-desc">O aviso automático vai sair do próprio WhatsApp Business da portaria. Ainda não está disponível.</p>
             <p class="plan-price"><span data-preco>R$ 214,80</span><small>/mês</small></p>
             <p class="plan-unit" data-unidade>R$ 2,15 por unidade ao mês</p>
             <ul class="plan-rules">
+              <li>Valores previstos para o lançamento</li>
               <li>Até 100 unidades: R$ 214,80/mês</li>
               <li>De 101 a 200: R$ 310,80/mês</li>
               <li>Acima de 200: R$ 310,80 + R$ 1,31 por unidade extra</li>
             </ul>
-            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20contratar%20o%20plano%20Premium%20do%20CondoPack" target="_blank" rel="noopener">Quero o Premium</a>
+            <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20ser%20avisado%20quando%20o%20plano%20Premium%20do%20CondoPack%20estiver%20dispon%C3%ADvel" target="_blank" rel="noopener">Quero ser avisado</a>
           </article>
         </div>
         <div class="plans-includes">
           <p>Em todos os planos</p>
           <ul>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gestão completa de encomendas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> IA que lê a etiqueta</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Entrega com assinatura e foto</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Entrega múltipla</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Moradores e histórico</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Relatório mensal</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Backup diário e LGPD</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Implantação simples</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Atendimento direto pelo WhatsApp</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Atendimento pelo WhatsApp</li>
           </ul>
         </div>
       </div>
@@ -444,16 +564,32 @@
             <p>Não. Você não precisa cadastrar unidade por unidade: o CondoPack se integra aos contatos do telefone da portaria e as unidades entram praticamente de forma automática.</p>
           </details>
           <details>
+            <summary>Precisa de conta Google? <span class="plus" aria-hidden="true"></span></summary>
+            <p>Sim. O acesso ao CondoPack é feito com uma conta Google autorizada, e os dados ficam no Google Drive do próprio condomínio.</p>
+          </details>
+          <details>
+            <summary>E se a IA ler a etiqueta errado? <span class="plus" aria-hidden="true"></span></summary>
+            <p>A IA só lê a etiqueta. Quem decide é uma regra do sistema que, na dúvida, não adivinha: preenche o que leu e o porteiro confere antes de salvar.</p>
+          </details>
+          <details>
+            <summary>O morador pode responder ao aviso automático? <span class="plus" aria-hidden="true"></span></summary>
+            <p>O aviso do plano PRO sai do número oficial do CondoPack, que não recebe respostas. Por isso a mensagem traz um botão que abre direto o WhatsApp da portaria.</p>
+          </details>
+          <details>
+            <summary>O sistema faz reconhecimento facial? <span class="plus" aria-hidden="true"></span></summary>
+            <p>Não. Na selfie do início do turno, o sistema só confere se há um rosto na foto. Ela serve para registrar quem estava de plantão.</p>
+          </details>
+          <details>
             <summary>Onde ficam os dados do condomínio? <span class="plus" aria-hidden="true"></span></summary>
             <p>Na conta Google (Google Drive e Planilhas) do próprio condomínio. O acesso é feito só com conta Google autorizada.</p>
           </details>
           <details>
             <summary>Por quanto tempo as fotos ficam guardadas? <span class="plus" aria-hidden="true"></span></summary>
-            <p>As fotos de etiquetas, assinaturas e fotos de entrega são apagadas automaticamente 90 dias depois da entrega. Os registros em texto continuam no histórico enquanto o condomínio for cliente.</p>
+            <p>Selfies dos porteiros, fotos de etiquetas, assinaturas e fotos de entrega são apagadas automaticamente depois de 90 dias. Os registros em texto continuam no histórico enquanto o contrato durar.</p>
           </details>
           <details>
             <summary>Qual é a diferença entre os planos? <span class="plus" aria-hidden="true"></span></summary>
-            <p>A forma de envio do aviso: no Básico, a portaria envia manualmente; no PRO, o envio é automático pelo número oficial do CondoPack; no Premium, o envio é automático pelo próprio WhatsApp da portaria.</p>
+            <p>Só a forma de envio do aviso. No Básico, o porteiro toca no botão e envia a mensagem pronta pelo WhatsApp da portaria. No PRO, o aviso sai sozinho do número oficial do CondoPack, com a foto da etiqueta. O Premium, com envio automático pelo próprio WhatsApp Business da portaria, chega em breve.</p>
           </details>
           <details>
             <summary>Quanto custa? <span class="plus" aria-hidden="true"></span></summary>
@@ -470,8 +606,8 @@
           <div>
             <span class="eyebrow" style="color:#BFDBFE">Contato</span>
             <h2 id="titulo-contato">Vamos organizar <span class="tone">a sua portaria?</span></h2>
-            <p>Quer levar o CondoPack para o seu condomínio ou tirar dúvidas sobre os planos? Fale com a gente.</p>
-            <a class="btn btn-white" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20CondoPack" target="_blank" rel="noopener">Falar no WhatsApp <span class="btn-arrow" aria-hidden="true" style="background:var(--blue-soft)"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+            <p>Síndico, administradora ou porteiro: chame a gente no WhatsApp para ver o CondoPack funcionando ou tirar dúvidas sobre os planos.</p>
+            <a class="btn btn-white" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20CondoPack" target="_blank" rel="noopener">Agendar demonstração <span class="btn-arrow" aria-hidden="true" style="background:var(--blue-soft)"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
           </div>
           <div class="contact-box">
             <a class="contact-link" href="https://wa.me/5516991608868" target="_blank" rel="noopener">

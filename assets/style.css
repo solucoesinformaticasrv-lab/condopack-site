@@ -434,3 +434,27 @@ section { padding: 72px 0; }
 .shot-phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 28px; }
 .shot figcaption { margin-top: 18px; color: var(--muted); font-size: .95rem; }
 .shot figcaption strong { display: block; color: var(--ink); font-size: 1.05rem; margin-bottom: 4px; }
+
+/* ---------- O problema ---------- */
+.problem { padding-bottom: 32px; }
+.problem-grid { display: grid; gap: 14px; }
+@media (min-width: 600px) { .problem-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .problem-grid { grid-template-columns: repeat(4, 1fr); } }
+.problem-card .feature-ico { background: #FEE2E2; color: #DC2626; }
+.problem-card:hover { border-color: #FCA5A5; }
+.problem-answer { margin: 32px 0 0; font-size: 1.15rem; color: var(--ink); }
+.problem-answer strong { color: var(--blue); }
+
+/* ---------- Relatório ---------- */
+.report-title { font-weight: 700; color: var(--ink); margin: 0 0 4px; }
+.report-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.report-list li { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; font-weight: 500; color: var(--ink); }
+.report-list .icon { width: 20px; height: 20px; color: var(--blue); }
+
+/* ---------- Para quem: 4 colunas ---------- */
+@media (min-width: 700px) { .pillars { grid-template-columns: repeat(2, 1fr); gap: 0 32px; } }
+@media (min-width: 1100px) { .pillars { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Plano em breve ---------- */
+.plan-soon .plan-badge { background: #F59E0B; }
+.plan-soon .plan-price, .plan-soon .plan-unit { opacity: .55; }

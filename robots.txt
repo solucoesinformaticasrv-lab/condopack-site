@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /portaria.html
+
+Sitemap: https://solucoesinformaticasrv-lab.github.io/condopack-site/sitemap.xml

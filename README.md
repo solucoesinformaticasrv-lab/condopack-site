@@ -17,6 +17,7 @@ O site também serve para a verificação de empresa da Meta (WhatsApp Business 
 | `assets/style.css` | Estilos (cores, fonte Inter, layout responsivo) |
 | `assets/script.js` | Menu no celular, animação do "Como funciona" e calculadora de planos (preços em `precos`) |
 | `assets/favicon.svg` | Ícone do site |
+| `robots.txt` e `sitemap.xml` | SEO (atualize a data em `sitemap.xml` quando mudar uma página) |
 | `img/aviso-encomenda.jpg` | Imagem do aviso de encomenda (WhatsApp) |
 | `img/app/*.jpg` | Telas reais do app (com dados fictícios no lugar dos dados pessoais) usadas no hero e na seção "Por dentro do CondoPack" |
 
