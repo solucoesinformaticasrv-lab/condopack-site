@@ -458,3 +458,12 @@ section { padding: 72px 0; }
 /* ---------- Plano em breve ---------- */
 .plan-soon .plan-badge { background: #F59E0B; }
 .plan-soon .plan-price, .plan-soon .plan-unit { opacity: .55; }
+
+/* ---------- Condições comerciais ---------- */
+.hero-terms { margin: -16px 0 24px; font-size: .9rem; font-weight: 500; color: var(--muted); }
+.offer-strip { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; }
+@media (min-width: 640px) { .offer-strip { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .offer-strip { grid-template-columns: repeat(4, 1fr); } }
+.offer-strip li { display: flex; align-items: center; gap: 10px; background: var(--blue-tint); border: 1px solid #BFDBFE; border-radius: 14px; padding: 14px 16px; color: var(--ink); font-size: .95rem; }
+.offer-strip strong { color: var(--blue); }
+.offer-strip .icon { width: 20px; height: 20px; color: var(--blue); }
