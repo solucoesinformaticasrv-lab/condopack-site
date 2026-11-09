@@ -108,7 +108,7 @@
             <h1 id="titulo-hero">Encomendas sob controle. <span class="accent">Do recebimento à entrega.</span></h1>
             <p class="lead">Sistema para portarias: registre encomendas, avise moradores por WhatsApp e controle as retiradas. Cada entrega com assinatura ou foto, e um relatório mensal para o síndico.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20CondoPack" target="_blank" rel="noopener">Agendar demonstração <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
+              <a class="btn btn-primary" href="#demonstracao">Agendar demonstração <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
               <a class="btn btn-ghost" href="#como-funciona">Veja como funciona</a>
             </div>
             <p class="hero-terms">8 dias grátis · Sem taxa de implantação · Sem fidelidade · Atendemos todo o Brasil</p>
@@ -616,6 +616,82 @@
             <summary>Quanto custa? <span class="plus" aria-hidden="true"></span></summary>
             <p>Depende do plano e do número de unidades. Use a <a href="#planos">calculadora dos planos</a> para ver o valor mensal; acima de 700 unidades, fazemos uma proposta sob medida.</p>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demonstração (formulário em 4 passos; envia as respostas pelo WhatsApp) -->
+    <section id="demonstracao" class="demo-section" aria-labelledby="titulo-demo">
+      <div class="container demo-grid">
+        <div class="demo-intro">
+          <span class="eyebrow" style="color:#BFDBFE">Demonstração</span>
+          <h2 id="titulo-demo">Veja o CondoPack funcionando <span class="tone">na rotina da sua portaria</span></h2>
+          <p>Responda 4 perguntas rápidas e fale com a gente no WhatsApp. Na demonstração você vê, na prática:</p>
+          <ul class="demo-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> A IA lendo a etiqueta e registrando a encomenda</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> O aviso no WhatsApp com código de retirada</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> A entrega com assinatura ou foto</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> O relatório mensal para o síndico</li>
+          </ul>
+          <p class="demo-terms">8 dias grátis · Sem taxa de implantação · Sem fidelidade</p>
+        </div>
+
+        <div class="demo-card" data-demo>
+          <h3 class="demo-title">Solicite uma demonstração</h3>
+          <div class="demo-progress" aria-hidden="true"><span class="demo-bar"><i data-demo-bar></i></span><span data-demo-count>1 de 4</span></div>
+          <p class="sr-only" aria-live="polite" data-demo-live></p>
+
+          <fieldset class="demo-step is-active" data-step="1" data-key="tipo">
+            <legend>Qual é o tipo do seu condomínio?</legend>
+            <button type="button" class="demo-opt">Residencial</button>
+            <button type="button" class="demo-opt">Comercial</button>
+            <button type="button" class="demo-opt">Misto</button>
+            <button type="button" class="demo-opt">Sou administradora</button>
+          </fieldset>
+
+          <fieldset class="demo-step" data-step="2" data-key="unidades" hidden>
+            <legend>Quantas unidades tem o condomínio?</legend>
+            <button type="button" class="demo-opt">Até 50</button>
+            <button type="button" class="demo-opt">51 a 150</button>
+            <button type="button" class="demo-opt">151 a 300</button>
+            <button type="button" class="demo-opt">Mais de 300</button>
+            <button type="button" class="demo-back">Voltar</button>
+          </fieldset>
+
+          <fieldset class="demo-step" data-step="3" data-key="inicio" hidden>
+            <legend>Quando quer começar a usar o CondoPack?</legend>
+            <button type="button" class="demo-opt">Agora</button>
+            <button type="button" class="demo-opt">Este mês</button>
+            <button type="button" class="demo-opt">Próximo mês</button>
+            <button type="button" class="demo-opt">Ainda sem prazo</button>
+            <button type="button" class="demo-back">Voltar</button>
+          </fieldset>
+
+          <form class="demo-step" data-step="4" hidden novalidate>
+            <p class="demo-legend">Falta só o seu contato</p>
+            <label for="demo-nome">Nome</label>
+            <input id="demo-nome" name="nome" type="text" autocomplete="name" required maxlength="80">
+            <label for="demo-cidade">Cidade</label>
+            <input id="demo-cidade" name="cidade" type="text" autocomplete="address-level2" maxlength="60" placeholder="Ex.: Ribeirão Preto">
+            <label for="demo-cargo">Você é</label>
+            <select id="demo-cargo" name="cargo">
+              <option>Síndico(a)</option>
+              <option>Administradora</option>
+              <option>Zelador(a) ou porteiro(a)</option>
+              <option>Morador(a)</option>
+              <option>Outro</option>
+            </select>
+            <p class="demo-error" data-demo-error hidden>Informe o seu nome para continuar.</p>
+            <p class="demo-note">Ao enviar, abrimos o WhatsApp do CondoPack com as suas respostas. Usamos esses dados só para falar com você, conforme a <a href="privacidade.html">Política de Privacidade</a>.</p>
+            <button type="submit" class="btn btn-primary demo-submit">Solicitar demonstração <span class="btn-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></button>
+            <button type="button" class="demo-back">Voltar</button>
+          </form>
+
+          <div class="demo-done" data-demo-done hidden>
+            <span class="demo-done-ico" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+            <p><strong>Quase lá!</strong> Abrimos o WhatsApp com a sua mensagem. É só tocar em enviar.</p>
+            <a class="btn btn-primary" data-demo-link href="https://wa.me/5516991608868" target="_blank" rel="noopener">Abrir o WhatsApp de novo</a>
+          </div>
         </div>
       </div>
     </section>
