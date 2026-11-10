@@ -68,7 +68,7 @@
   }
 })();
 
-// Calculadora de planos por número de unidades
+// Calculadora de planos: residencial (por unidade) e comercial (por sala ou conjunto)
 (function () {
   var calc = document.querySelector('[data-calc]');
   if (!calc) return;
@@ -76,42 +76,108 @@
   var out = document.getElementById('unidadesOut');
   var LIMITE = 700; // acima disso: proposta sob medida
 
-  // Preços mensais (R$) por plano, de acordo com o número de unidades
-  var precos = {
-    basico: function (u) { return Math.max(49.90, u * 0.55); }, // mínimo de R$ 49,90
-    pro: function (u) { return u <= 100 ? 116.35 : u <= 200 ? 168.35 : 168.35 + (u - 200) * 0.71; },
-    premium: function (u) { return u <= 100 ? 214.80 : u <= 200 ? 310.80 : 310.80 + (u - 200) * 1.31; }
+  // Tabelas de preço (R$ por mês). Mantenha igual à TABELA_PRECOS_ do painel CondoPack Admin.
+  //   POR_UNIDADE: valor por unidade com mínimo.
+  //   FAIXAS: até 100, de 101 a 200, e acima de 200 + valor por unidade extra.
+  var TABELAS = {
+    residencial: {
+      nome: 'unidades', umaUnidade: 'unidade',
+      pergunta: 'Quantas unidades tem o seu condomínio?',
+      ajuda: 'Arraste para ver o valor de cada plano. Acima de 700 unidades, fazemos uma proposta sob medida.',
+      planos: {
+        basico: { tipo: 'POR_UNIDADE', porUnidade: 0.55, minimo: 49.90 },
+        pro: { tipo: 'POR_UNIDADE', porUnidade: 0.97, minimo: 133.80 },
+        premium: { tipo: 'POR_UNIDADE', porUnidade: 1.79, minimo: 247.02 }
+      }
+    },
+    comercial: {
+      nome: 'salas', umaUnidade: 'sala',
+      pergunta: 'Quantas salas ou conjuntos tem o prédio?',
+      ajuda: 'Cada sala ou conjunto comercial conta como uma unidade. Acima de 700 salas, fazemos uma proposta sob medida.',
+      planos: {
+        basico: { tipo: 'POR_UNIDADE', porUnidade: 0.55, minimo: 49.90 },
+        pro: { tipo: 'FAIXAS', ate100: 116.35, ate200: 168.35, extraAcima200: 0.71 },
+        premium: { tipo: 'FAIXAS', ate100: 214.80, ate200: 310.80, extraAcima200: 1.31 }
+      }
+    }
   };
+  var tipoAtual = 'residencial';
 
   function reais(v) {
     return 'R$ ' + v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 
+  function preco(t, u) {
+    if (t.tipo === 'POR_UNIDADE') return Math.max(t.minimo, u * t.porUnidade);
+    return u <= 100 ? t.ate100 : u <= 200 ? t.ate200 : t.ate200 + (u - 200) * t.extraAcima200;
+  }
+
+  function regras(t, tab) {
+    if (t.tipo === 'POR_UNIDADE') {
+      return [
+        reais(t.porUnidade) + ' por ' + tab.umaUnidade + ' ao mês',
+        'Mínimo de ' + reais(t.minimo) + '/mês',
+        'Ex.: 200 ' + tab.nome + ' = ' + reais(preco(t, 200)) + '/mês'
+      ];
+    }
+    return [
+      'Até 100 ' + tab.nome + ': ' + reais(t.ate100) + '/mês',
+      'De 101 a 200: ' + reais(t.ate200) + '/mês',
+      'Acima de 200: ' + reais(t.ate200) + ' + ' + reais(t.extraAcima200) + ' por ' + tab.umaUnidade + ' extra'
+    ];
+  }
+
+  function trocarTipo(tipo) {
+    tipoAtual = tipo;
+    var tab = TABELAS[tipo];
+    calc.querySelectorAll('[data-tipo]').forEach(function (b) {
+      var ativo = b.getAttribute('data-tipo') === tipo;
+      b.classList.toggle('is-active', ativo);
+      b.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+    });
+    calc.querySelector('[data-calc-pergunta]').textContent = tab.pergunta;
+    calc.querySelector('[data-calc-nome]').textContent = tab.nome;
+    calc.querySelector('[data-calc-ajuda]').textContent = tab.ajuda;
+    document.querySelectorAll('[data-plan]').forEach(function (card) {
+      var ul = card.querySelector('[data-regras]');
+      if (!ul) return;
+      var linhas = regras(tab.planos[card.getAttribute('data-plan')], tab);
+      if (card.getAttribute('data-plan') === 'premium') linhas.unshift('Valores previstos para o lançamento');
+      ul.innerHTML = '';
+      linhas.forEach(function (txt) { var li = document.createElement('li'); li.textContent = txt; ul.appendChild(li); });
+    });
+    atualizar();
+  }
+
   function atualizar() {
+    var tab = TABELAS[tipoAtual];
     var u = Number(range.value);
     var acima = u > LIMITE;
     out.textContent = acima ? '700+' : String(u);
-    range.setAttribute('aria-valuetext', acima ? 'Mais de 700 unidades' : u + ' unidades');
+    range.setAttribute('aria-valuetext', acima ? 'Mais de 700 ' + tab.nome : u + ' ' + tab.nome);
     range.style.setProperty('--p', ((u - range.min) / (range.max - range.min) * 100) + '%');
     document.querySelectorAll('[data-plan]').forEach(function (card) {
-      var preco = card.querySelector('[data-preco]');
+      var precoEl = card.querySelector('[data-preco]');
       var unidade = card.querySelector('[data-unidade]');
       var small = card.querySelector('.plan-price small');
       if (acima) {
-        preco.textContent = 'Sob consulta';
+        precoEl.textContent = 'Sob consulta';
         small.hidden = true;
         unidade.textContent = 'Proposta sob medida';
         return;
       }
-      var valor = precos[card.getAttribute('data-plan')](u);
-      preco.textContent = reais(valor);
+      var valor = preco(tab.planos[card.getAttribute('data-plan')], u);
+      precoEl.textContent = reais(valor);
       small.hidden = false;
-      unidade.textContent = reais(valor / u) + ' por unidade ao mês';
+      unidade.textContent = reais(valor / u) + ' por ' + tab.umaUnidade + ' ao mês';
     });
   }
 
+  calc.querySelectorAll('[data-tipo]').forEach(function (b) {
+    b.addEventListener('click', function () { trocarTipo(b.getAttribute('data-tipo')); });
+  });
   range.addEventListener('input', atualizar);
-  atualizar();
+  trocarTipo('residencial');
 })();
 
 // Demonstração: formulário em 4 passos que abre o WhatsApp com as respostas

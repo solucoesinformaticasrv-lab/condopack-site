@@ -482,13 +482,17 @@
         </ul>
 
         <div class="calc" data-calc>
+          <div class="calc-tipo" role="group" aria-label="Tipo de prédio">
+            <button type="button" class="calc-tipo-btn is-active" data-tipo="residencial" aria-pressed="true">Residencial</button>
+            <button type="button" class="calc-tipo-btn" data-tipo="comercial" aria-pressed="false">Comercial</button>
+          </div>
           <div class="calc-top">
-            <label class="calc-label" for="unidades">Quantas unidades tem o seu condomínio?</label>
-            <div class="calc-value"><output id="unidadesOut" for="unidades">100</output> <span>unidades</span></div>
+            <label class="calc-label" for="unidades" data-calc-pergunta>Quantas unidades tem o seu condomínio?</label>
+            <div class="calc-value"><output id="unidadesOut" for="unidades">100</output> <span data-calc-nome>unidades</span></div>
           </div>
           <input class="calc-range" type="range" id="unidades" min="10" max="710" step="10" value="100" aria-describedby="calcAjuda">
           <div class="calc-scale" aria-hidden="true"><span>10</span><span>100</span><span>200</span><span>400</span><span>700+</span></div>
-          <p class="calc-help" id="calcAjuda">Arraste para ver o valor de cada plano. Acima de 700 unidades, fazemos uma proposta sob medida.</p>
+          <p class="calc-help" id="calcAjuda" data-calc-ajuda>Arraste para ver o valor de cada plano. Acima de 700 unidades, fazemos uma proposta sob medida.</p>
         </div>
 
         <div class="plans">
@@ -498,7 +502,7 @@
             <p class="plan-desc">O porteiro toca no botão e a mensagem já abre pronta no WhatsApp da portaria. É só enviar.</p>
             <p class="plan-price"><span data-preco>R$ 55,00</span><small>/mês</small></p>
             <p class="plan-unit" data-unidade>R$ 0,55 por unidade ao mês</p>
-            <ul class="plan-rules">
+            <ul class="plan-rules" data-regras>
               <li>R$ 0,55 por unidade ao mês</li>
               <li>Mínimo de R$ 49,90/mês</li>
               <li>Ex.: 200 unidades = R$ 110,00/mês</li>
@@ -510,12 +514,12 @@
             <h3 class="plan-name">PRO</h3>
             <p class="plan-tagline">Aviso automático</p>
             <p class="plan-desc">O aviso sai sozinho do número oficial do CondoPack, com a foto da etiqueta, e traz um botão que abre o WhatsApp da portaria. O porteiro não precisa fazer nada.</p>
-            <p class="plan-price"><span data-preco>R$ 116,35</span><small>/mês</small></p>
-            <p class="plan-unit" data-unidade>R$ 1,16 por unidade ao mês</p>
-            <ul class="plan-rules">
-              <li>Até 100 unidades: R$ 116,35/mês</li>
-              <li>De 101 a 200: R$ 168,35/mês</li>
-              <li>Acima de 200: R$ 168,35 + R$ 0,71 por unidade extra</li>
+            <p class="plan-price"><span data-preco>R$ 133,80</span><small>/mês</small></p>
+            <p class="plan-unit" data-unidade>R$ 1,34 por unidade ao mês</p>
+            <ul class="plan-rules" data-regras>
+              <li>R$ 0,97 por unidade ao mês</li>
+              <li>Mínimo de R$ 133,80/mês</li>
+              <li>Ex.: 200 unidades = R$ 194,00/mês</li>
             </ul>
             <a class="btn btn-primary" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20testar%20gr%C3%A1tis%20o%20plano%20PRO%20do%20CondoPack" target="_blank" rel="noopener">Testar o PRO grátis</a>
           </article>
@@ -524,13 +528,13 @@
             <h3 class="plan-name">Premium</h3>
             <p class="plan-tagline">Do WhatsApp da própria portaria</p>
             <p class="plan-desc">O aviso automático vai sair do próprio WhatsApp Business da portaria. Ainda não está disponível.</p>
-            <p class="plan-price"><span data-preco>R$ 214,80</span><small>/mês</small></p>
-            <p class="plan-unit" data-unidade>R$ 2,15 por unidade ao mês</p>
-            <ul class="plan-rules">
+            <p class="plan-price"><span data-preco>R$ 247,02</span><small>/mês</small></p>
+            <p class="plan-unit" data-unidade>R$ 2,47 por unidade ao mês</p>
+            <ul class="plan-rules" data-regras>
               <li>Valores previstos para o lançamento</li>
-              <li>Até 100 unidades: R$ 214,80/mês</li>
-              <li>De 101 a 200: R$ 310,80/mês</li>
-              <li>Acima de 200: R$ 310,80 + R$ 1,31 por unidade extra</li>
+              <li>R$ 1,79 por unidade ao mês</li>
+              <li>Mínimo de R$ 247,02/mês</li>
+              <li>Ex.: 200 unidades = R$ 358,00/mês</li>
             </ul>
             <a class="btn btn-outline" href="https://wa.me/5516991608868?text=Ol%C3%A1%2C%20quero%20ser%20avisado%20quando%20o%20plano%20Premium%20do%20CondoPack%20estiver%20dispon%C3%ADvel" target="_blank" rel="noopener">Quero ser avisado</a>
           </article>
@@ -614,7 +618,11 @@
           </details>
           <details>
             <summary>Quanto custa? <span class="plus" aria-hidden="true"></span></summary>
-            <p>Depende do plano e do número de unidades. Use a <a href="#planos">calculadora dos planos</a> para ver o valor mensal; acima de 700 unidades, fazemos uma proposta sob medida.</p>
+            <p>Depende do plano e do tamanho do prédio. Em condomínios residenciais, o valor é por unidade; em prédios comerciais, por sala ou conjunto. Use a <a href="#planos">calculadora dos planos</a> (escolha Residencial ou Comercial) para ver o valor mensal; acima de 700 unidades ou salas, fazemos uma proposta sob medida.</p>
+          </details>
+          <details>
+            <summary>Como é calculado o preço para prédios comerciais? <span class="plus" aria-hidden="true"></span></summary>
+            <p>Em prédios comerciais, cada sala ou conjunto conta como uma unidade, porque é para ela que a portaria registra a encomenda. Uma empresa que ocupa várias salas conta uma vez para cada sala. Prédios mistos (com apartamentos e salas) recebem uma proposta sob medida.</p>
           </details>
         </div>
       </div>
@@ -650,7 +658,7 @@
           </fieldset>
 
           <fieldset class="demo-step" data-step="2" data-key="unidades" hidden>
-            <legend>Quantas unidades tem o condomínio?</legend>
+            <legend>Quantas unidades (ou salas) tem o condomínio?</legend>
             <button type="button" class="demo-opt">Até 50</button>
             <button type="button" class="demo-opt">51 a 150</button>
             <button type="button" class="demo-opt">151 a 300</button>

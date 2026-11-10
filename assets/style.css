@@ -502,3 +502,8 @@ section { padding: 72px 0; }
 .offer-strip li { display: flex; align-items: center; gap: 10px; background: var(--blue-tint); border: 1px solid #BFDBFE; border-radius: 14px; padding: 14px 16px; color: var(--ink); font-size: .95rem; }
 .offer-strip strong { color: var(--blue); }
 .offer-strip .icon { width: 20px; height: 20px; color: var(--blue); }
+/* Calculadora: Residencial / Comercial */
+.calc-tipo { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 18px; background: var(--blue-soft); border-radius: 999px; }
+.calc-tipo-btn { border: 0; background: transparent; color: var(--blue); font: inherit; font-weight: 700; font-size: .92rem; padding: 8px 18px; border-radius: 999px; cursor: pointer; }
+.calc-tipo-btn.is-active { background: var(--blue); color: #fff; box-shadow: 0 4px 12px rgba(37, 99, 235, .3); }
+.calc-tipo-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
