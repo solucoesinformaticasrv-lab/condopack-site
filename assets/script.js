@@ -116,8 +116,7 @@
     if (t.tipo === 'POR_UNIDADE') {
       return [
         reais(t.porUnidade) + ' por ' + tab.umaUnidade + ' ao mês',
-        'Mínimo de ' + reais(t.minimo) + '/mês',
-        'Ex.: 200 ' + tab.nome + ' = ' + reais(preco(t, 200)) + '/mês'
+        'Mínimo de ' + reais(t.minimo) + '/mês'
       ];
     }
     return [
@@ -169,7 +168,9 @@
       var valor = preco(tab.planos[card.getAttribute('data-plan')], u);
       precoEl.textContent = reais(valor);
       small.hidden = false;
-      unidade.textContent = reais(valor / u) + ' por ' + tab.umaUnidade + ' ao mês';
+      var t = tab.planos[card.getAttribute('data-plan')];
+      var noMinimo = t.tipo === 'POR_UNIDADE' && valor === t.minimo;
+      unidade.textContent = 'Para ' + u + ' ' + tab.nome + (noMinimo ? ' · valor mínimo' : '');
     });
   }
 
